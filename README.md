@@ -35,19 +35,19 @@ int main() {
   obj["obj"] = json::Object();
   // Assign to one of the inner object's fields
   obj["obj"]["inner"] = "Inside";
-  
+
   // We don't need to specify the type of the JSON object:
   obj["new"]["some"]["deep"]["key"] = "Value";
   obj["array2"].append( false, "three" );
-  
+
   // We can also parse a string into a JSON object:
-  obj["parsed"] = JSON::Load( "[ { \"Key\" : \"Value\" }, false ]" );
-  
+  obj["parsed"] = json::JSON::Load( "[ { \"Key\" : \"Value\" }, false ]" );
+
   std::cout << obj << std::endl;
 }
 ```
 Output:
-``` 
+```
 {
   "array" : [true, "Two", 3, 4.000000],
   "array2" : [false, "three"],
@@ -80,12 +80,12 @@ int main() {
         "obj", {
             "inner", "Inside"
         },
-        "new", { 
-            "some", { 
-                "deep", { 
-                    "key", "Value" 
-                } 
-            } 
+        "new", {
+            "some", {
+                "deep", {
+                    "key", "Value"
+                }
+            }
         },
         "array2", json::Array( false, "three" )
     };
